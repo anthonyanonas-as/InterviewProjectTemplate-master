@@ -1,0 +1,30 @@
+<div style="max-width: 500px; margin: 40px auto; font-family: system-ui, sans-serif; padding: 20px; border: 1px solid #ccc; border-radius: 8px;">
+  <h2>Daily Mood Tracker</h2>
+  <p>How are you feeling today?</p>
+
+  <div *ngIf="errorMessage" style="background-color: #f8d7da; color: #721c24; padding: 12px; margin-bottom: 15px; border-radius: 4px;">
+    ⚠️ {{ errorMessage }}
+  </div>
+
+  <div *ngIf="successMessage" style="background-color: #d4edda; color: #155724; padding: 12px; margin-bottom: 15px; border-radius: 4px;">
+    ✅ {{ successMessage }}
+  </div>
+
+  <div *ngIf="!successMessage">
+    <div *ngFor="let option of moodOptions" style="margin-bottom: 12px;">
+      <label style="font-size: 16px; cursor: pointer;">
+        <input type="radio" name="mood" [value]="option" [(ngModel)]="selectedMood">
+        {{ option }}
+      </label>
+    </div>
+
+    <div style="margin-top: 20px;">
+      <label style="display: block; margin-bottom: 5px;">Optional Comment:</label>
+      <textarea [(ngModel)]="noteText" placeholder="Tell us more about your day..." style="width: 100%; height: 80px; box-sizing: border-box;"></textarea>
+    </div>
+
+    <button (click)="submitMood()" [disabled]="!selectedMood" style="margin-top: 15px; width: 100%; padding: 10px; background-color: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer;">
+      Submit Daily Mood
+    </button>
+  </div>
+</div>
