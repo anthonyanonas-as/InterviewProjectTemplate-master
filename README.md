@@ -37,3 +37,7 @@ A blank MySQL database is included inside the container, and will start up when 
 ## Frontend
 
 The frontend will be run on `http://localhost:4200`. When making API calls to the backend, please ensure that `environment.apiUrl` is used for the URL, rather than hardcoding the value. This will ensure that we can easily re-configure the URL if needed for deployment.
+
+## E2E Test
+[exam-demo.webm](https://github.com/user-attachments/assets/61b2b586-17a3-42b9-a8ce-ec983a4cd36b)
+
