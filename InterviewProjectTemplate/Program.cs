@@ -1,6 +1,5 @@
-
-using InterviewProject.Data;
 using Microsoft.EntityFrameworkCore;
+using InterviewProjectTemplate.Data;
 
 namespace InterviewProjectTemplate
 {
@@ -17,6 +16,10 @@ namespace InterviewProjectTemplate
                        .AllowAnyHeader()));
 
             builder.Services.AddControllers();
+            var connectionString = builder.Configuration.GetConnectionString("MySQLConnectionString");
+            builder.Services.AddDbContext<ApplicationDbContext>(options =>
+                options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
+            
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
@@ -33,26 +36,8 @@ namespace InterviewProjectTemplate
             app.UseHttpsRedirection();
 
             app.UseCors();
-
-            using (var scope = app.Services.CreateScope())
-            {
-                var services = scope.ServiceProvider;
-                try
-                {
-                    var context = services.GetRequiredService<ApplicationDbContext>();
-                    context.Database.Migrate(); 
-                }
-                catch (Exception ex)
-                {
-                    var logger = services.GetRequiredService<ILogger<Program>>();
-                    logger.LogError(ex, "An error occurred while migrating the database.");
-                }
-            }
-
             app.UseAuthorization();
-
             app.MapControllers();
-
             app.Run();
         }
     }

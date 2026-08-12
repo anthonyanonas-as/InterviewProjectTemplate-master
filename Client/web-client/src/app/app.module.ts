@@ -5,13 +5,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UserTrackerComponent } from './components/user-tracker/user-tracker.component';
-import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
+import { AdminDashboard } from './components/admin-dashboard/admin-dashboard';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     UserTrackerComponent,
-    AdminDashboardComponent
+    AdminDashboard
   ],
   imports: [
     BrowserModule,
