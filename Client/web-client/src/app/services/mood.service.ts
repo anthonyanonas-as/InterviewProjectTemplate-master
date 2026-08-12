@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 export interface MoodEntryDto {
   mood: string;
@@ -11,8 +12,7 @@ export interface MoodEntryDto {
   providedIn: 'root'
 })
 export class MoodService {
-  // Configured to interact with your explicit port 8080 Docker mapping layout
-  private apiUrl = 'http://localhost:8080/api/mood';
+  private apiUrl = `${environment.apiUrl}/api/mood`;
 
   constructor(private http: HttpClient) { }
 

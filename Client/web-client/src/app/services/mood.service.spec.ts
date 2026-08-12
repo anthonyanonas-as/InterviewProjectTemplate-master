@@ -31,7 +31,7 @@ describe('MoodService', () => {
       expect(response).toEqual({ message: 'Mood recorded successfully!' });
     });
 
-    const req = httpMock.expectOne('http://localhost:8080/api/mood');
+    const req = httpMock.expectOne(`${service['apiUrl']}`);
     expect(req.request.method).toBe('POST');
     expect(req.request.body).toEqual(payload);
     req.flush({ message: 'Mood recorded successfully!' });
@@ -44,7 +44,7 @@ describe('MoodService', () => {
       expect(logs).toEqual(mockLogs);
     });
 
-    const req = httpMock.expectOne('http://localhost:8080/api/mood/admin-logs');
+    const req = httpMock.expectOne(`${service['apiUrl']}/admin-logs`);
     expect(req.request.method).toBe('GET');
     req.flush(mockLogs);
   });
