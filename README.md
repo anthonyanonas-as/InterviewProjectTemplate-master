@@ -37,3 +37,22 @@ A blank MySQL database is included inside the container, and will start up when 
 ## Frontend
 
 The frontend will be run on `http://localhost:4200`. When making API calls to the backend, please ensure that `environment.apiUrl` is used for the URL, rather than hardcoding the value. This will ensure that we can easily re-configure the URL if needed for deployment.
+
+## E2E Test
+[exam-demo.webm](https://github.com/user-attachments/assets/61b2b586-17a3-42b9-a8ce-ec983a4cd36b)
+
+### Admin Role
+To enable and display the System Admin Log View, for demo purposes, add a new key in localstorage "isAdmin" with a value of true.
+
+## Unit Test
+### Backend
+<img width="990" height="187" alt="image" src="https://github.com/user-attachments/assets/6457ceb5-fef3-408e-8dfd-f95b2d715b21" />
+<img width="1692" height="879" alt="image" src="https://github.com/user-attachments/assets/2e48883c-ea5a-4ddb-96fa-68dd05b27e3c" />
+
+### Frontend
+<img width="944" height="724" alt="image" src="https://github.com/user-attachments/assets/c4bdcdd3-9133-4465-9c34-5ca6e93864a9" />
+<img width="759" height="200" alt="image" src="https://github.com/user-attachments/assets/8d89bba7-e0eb-4607-813b-8644730933ae" />
+
+
+
+
