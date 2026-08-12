@@ -14,6 +14,22 @@ Once the codebase has been cloned, it can be run using the following two command
 
 This will build and run the ASP.NET Core backend, the Angular frontend, and the MySQL database inside a docker container.
 
+## Tests
+
+### Backend
+
+Run the C# unit tests from the repository root:
+
+`dotnet test InterviewProjectTemplate.Tests\InterviewProjectTemplate.Tests.csproj`
+
+### Frontend
+
+Run the Angular unit tests from the `Client/web-client` folder:
+
+`cd Client/web-client`
+
+`npm test -- --watch=false`
+
 ## Database
 
 A blank MySQL database is included inside the container, and will start up when the container is run. The ASP.NET Core backend is already configured with a connection string to this database.

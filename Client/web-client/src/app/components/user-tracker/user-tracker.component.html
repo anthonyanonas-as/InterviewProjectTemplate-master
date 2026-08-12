@@ -1,12 +1,12 @@
-<div style="max-width: 500px; margin: 40px auto; font-family: system-ui, sans-serif; padding: 20px; border: 1px solid #ccc; border-radius: 8px;">
+<div class="card">
   <h2>Daily Mood Tracker</h2>
   <p>How are you feeling today?</p>
 
-  <div *ngIf="errorMessage" style="background-color: #f8d7da; color: #721c24; padding: 12px; margin-bottom: 15px; border-radius: 4px;">
+  <div *ngIf="errorMessage" class="response-message error">
     ⚠️ {{ errorMessage }}
   </div>
 
-  <div *ngIf="successMessage" style="background-color: #d4edda; color: #155724; padding: 12px; margin-bottom: 15px; border-radius: 4px;">
+  <div *ngIf="successMessage" class="response-message success">
     ✅ {{ successMessage }}
   </div>
 
@@ -27,4 +27,8 @@
       Submit Daily Mood
     </button>
   </div>
+</div>
+
+<div class="floating-link-right" *ngIf="isAdmin">
+  <a routerLink="/super-admin-logs">Admin Logs</a>
 </div>

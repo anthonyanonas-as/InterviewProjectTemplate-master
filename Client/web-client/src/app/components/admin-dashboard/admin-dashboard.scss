@@ -1,0 +1,29 @@
+.card {
+  max-width: 900px;
+}
+.table-container {width: 100%; border-collapse: collapse; margin-top: 20px;}
+.table-container thead {
+  background-color: #f4f4f4; text-align: left; border-bottom: 2px solid #ddd;
+}
+.table-container th tr{
+    background-color: #f4f4f4; text-align: left; border-bottom: 2px solid #ddd;
+}
+.table-container th, .table-container td {
+  padding: 12px;
+}
+.table-container tbody tr{
+    border-bottom: 1px solid #ddd;
+}
+.table-container td .timestamp {
+    white-space: nowrap; /* Prevents wrapping */
+}
+.table-container.ip {
+    font-family: monospace; color: #555;
+}
+.table-container td .mood{
+    padding: 4px 8px; border-radius: 12px; font-weight:bold; font-size: 13px;
+}
+.table-container td .mood.feeling-great { background-color: #d4edda; color: #155724; }
+.table-container td .mood.pretty-good { background-color: #cce5ff; color: #004085; }
+.table-container td .mood.neutral { background-color: #fff3cd; color: #856404; }
+.table-container td .mood.bad { background-color: #f8d7da; color: #721c24; }

@@ -1,1 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
+.card {
+  max-width: 88%;
+  margin: 40px auto;
+  font-family: system-ui, sans-serif;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.floating-link-right {
+  position: fixed;
+  bottom: 20px; /* Distance from screen bottom */
+  right: 20px;  /* Distance from screen right */
+  font-family: system-ui, sans-serif;
+}
+
+.response-message{
+    background-color: #d4edda; color: #155724; padding: 12px; margin-bottom: 15px; border-radius: 4px;
+}
+.response-message.success{
+    background-color: #d4edda; color: #155724;
+}
+.response-message.error{
+    background-color: #f8d7da; color: #721c24;
+}

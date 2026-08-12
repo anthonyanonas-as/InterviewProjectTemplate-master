@@ -1,9 +1,11 @@
-import { Component } from '@angular/core';
+import { Component,OnInit } from '@angular/core';
 import { MoodService, MoodEntryDto } from '../../services/mood.service';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-user-tracker',
-  templateUrl: './user-tracker.component.html'
+  templateUrl: './user-tracker.component.html',
+  styleUrls: ['./user-tracker.component.scss']
 })
 export class UserTrackerComponent {
   moodOptions = ['Not good at all', 'A bit “meh”', 'Pretty good', 'Feeling great'];
@@ -11,8 +13,15 @@ export class UserTrackerComponent {
   noteText = '';
   errorMessage = '';
   successMessage = '';
+  isAdmin = false;
 
-  constructor(private moodService: MoodService) {}
+  constructor(private moodService: MoodService, private authService: AuthService) {}
+  ngOnInit() {
+      this.authService.isAdmin().subscribe({
+        next: (data) => this.isAdmin = data,
+        error: (err) => console.error('Failed to load admin status', err)
+      });
+    }
 
   submitMood() {
     this.errorMessage = '';
