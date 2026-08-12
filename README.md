@@ -39,7 +39,9 @@ A blank MySQL database is included inside the container, and will start up when 
 The frontend will be run on `http://localhost:4200`. When making API calls to the backend, please ensure that `environment.apiUrl` is used for the URL, rather than hardcoding the value. This will ensure that we can easily re-configure the URL if needed for deployment.
 
 ## E2E Test / Running up the application
-Once the docker > compose build and up are done, you can now browse the mood tracker app via http://localhost:4200. The video below shows the running application with the Admin link is displayed. By default, you won't see this unless you add the isAdmin key to true in the localstorage, which also shown at the end of the video to disable the admin view.
+Once the docker > compose build and up are done, the table schema will also be created if it doesn't exist. The user can browse the mood tracker app via http://localhost:4200. The video below shows the running application with the Admin link is displayed. By default, you won't see this unless you add the isAdmin key to true in the localstorage, which also shown at the end of the video to hide the Admin log link.
+
+The mood tracker application allows one mood entry per IP Address a day. The unique record entry would be IPAddress and LogDate.
 
 [exam-demo.webm](https://github.com/user-attachments/assets/61b2b586-17a3-42b9-a8ce-ec983a4cd36b)
 
