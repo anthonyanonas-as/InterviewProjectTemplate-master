@@ -41,3 +41,11 @@ The frontend will be run on `http://localhost:4200`. When making API calls to th
 ## E2E Test
 [exam-demo.webm](https://github.com/user-attachments/assets/61b2b586-17a3-42b9-a8ce-ec983a4cd36b)
 
+## Unit Test
+### Backend
+<img width="990" height="187" alt="image" src="https://github.com/user-attachments/assets/6457ceb5-fef3-408e-8dfd-f95b2d715b21" />
+### WebClient
+<img width="944" height="724" alt="image" src="https://github.com/user-attachments/assets/c4bdcdd3-9133-4465-9c34-5ca6e93864a9" />
+
+
+
